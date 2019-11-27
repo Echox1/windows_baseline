@@ -9,3 +9,7 @@ windows基线脚本（powershell）
 
 
 因为没有当时的策略标准，代码就不再优化了，如果有需要的可以参考
+
+脚本小解：
+
+`https://www.cnblogs.com/escape-w/p/9688103.html`
