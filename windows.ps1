@@ -1,4 +1,4 @@
-﻿<#
+<#
 # author: Escape
 # add_time: 2018/08/27
 # 安全配置策略基线检测脚本
@@ -97,7 +97,7 @@ $config = Get-Content -path config.cfg
     if(($config_line[0] -eq "MinimumPasswordLength "))
     {
         $config_line[1] = $config_line[1].Trim(' ')
-        if($config_line[1] -ge "8")
+        if([int]$config_line[1] -ge "8")
         {
             $data.code = "1"
             $projectdata = @{"msg"="密码最小值策略符合标准";}
@@ -121,7 +121,7 @@ $config = Get-Content -path config.cfg
     if(($config_line[0] -eq "MaximumPasswordAge "))
     {
         $config_line[1] = $config_line[1].Trim(' ')
-        if($config_line[1] -le "90")
+        if([int]$config_line[1] -le "90")
         {
             $data.code = "1"
             $projectdata = @{"msg"="密码最长使用期限策略符合标准";}
@@ -145,7 +145,7 @@ $config = Get-Content -path config.cfg
     if(($config_line[0] -eq "LockoutBadCount "))
     {
         $config_line[1] = $config_line[1].Trim(' ')
-        if($config_line[1] -le "5")
+        if([int]$config_line[1] -le "5")
         {
             $data.code = "1"
             $projectdata = @{"msg"="账户锁定阀值策略符合标准";}
@@ -170,7 +170,7 @@ $config = Get-Content -path config.cfg
     if(($config_line[0] -eq "ResetLockoutCount "))
     {
         $config_line[1] = $config_line[1].Trim(' ')
-        if($config_line[1] -ge "10")
+        if([int]$config_line[1] -ge "10")
         {
             $data.code = "1"
             $projectdata = @{"msg"="账户锁定时间策略符合标准";}
@@ -194,7 +194,7 @@ $config = Get-Content -path config.cfg
     if(($config_line[0] -eq "ResetLockoutCount "))
     {
         $config_line[1] = $config_line[1].Trim(' ')
-        if($config_line[1] -ge "10")
+        if([int]$config_line[1] -ge "10")
         {
             $data.code = "1"
             $projectdata = @{"msg"="账户锁定时间策略符合标准";}
@@ -523,7 +523,7 @@ $config = Get-Content -path config.cfg
 	    $config_line = $config_line[1]
 	    $config_line = $config[$i] -split ","
         
-        if($config_line[1] -le "30")
+        if([int]$config_line[1] -le "30")
         {
             $data.code = "1"
             $projectdata = @{"msg"="暂停会话前所需的空闲时间策略符合标准";}
