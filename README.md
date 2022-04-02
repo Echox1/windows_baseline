@@ -13,3 +13,5 @@ windows基线脚本（powershell）
 脚本小解：
 
 `https://www.cnblogs.com/escape-w/p/9688103.html`
+
+如遇执行脚本报错的情况请修改脚本编码为UTF-8-BOM后再执行
